@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #161623;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(#de6705, #f0ec05);
+  border-radius: 50%;
+  animation: animate 20s ease-in-out infinite;
+}
+
+/* now animate cicile */
+
+@keyframes animate {
+  0%,
+  100% {
+    transform: translateX(-700px);
+  }
+
+  50% {
+    transform: translateX(700px);
+  }
+}
+
+/* now work on glass */
+
+.glass {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* now work multi layer */
+
+.glass .layer {
+  position: relative;
+  width: 30px;
+  height: 100vh;
+  margin: 1px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(30px);
+}
+
+.glass .layer:nth-child(4n + 1) {
+  backdrop-filter: blur(10px);
+}
+
+.glass .layer:nth-child(4n + 2) {
+  backdrop-filter: blur(50px);
+}
+
+.glass .layer:nth-child(4n + 3) {
+  backdrop-filter: blur(40px);
+}
+
+.glass .layer:nth-child(4n + 4) {
+  backdrop-filter: blur(30px);
+}
